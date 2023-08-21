@@ -10,7 +10,7 @@ const Login = () => {
     const navigate = useNavigate();
     const emailRef = useRef();
     const location = useLocation();
-    const from = location.state?.from?.pathname || '/'
+    const from = location.state?.from?.pathname || '/';
     const { loading,
         setLoading,
         signIn,
@@ -27,6 +27,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result.user);
+                toast.success('Login successfully')
                 navigate(from, {replace: true})
             })
             .catch(err => {
@@ -35,6 +36,7 @@ const Login = () => {
                 setLoading(false)
             })
     }
+
 
     // Handle password reset:
     const handlePasswordReset = () => {
@@ -65,6 +67,7 @@ const Login = () => {
                 setLoading(false)
             })
     }
+
 
 
     return (
