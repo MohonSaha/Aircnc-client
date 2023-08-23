@@ -2,6 +2,7 @@ import React from 'react';
 import Container from '../../components/shared/Container/Container';
 import Header from '../../components/Rooms/Header';
 import RoomInfo from '../../components/Rooms/RoomInfo';
+import RoomReservation from '../../components/Rooms/RoomReservation';
 
 const RoomsDetails = () => {
     return (
@@ -10,8 +11,10 @@ const RoomsDetails = () => {
                 <div className='flex flex-col gap-6'>
                     <div><Header></Header></div>
                     <div className="grid grid-cols-1 md:grid-cols-7 md:gap-10 mt-6">
-                        <RoomInfo/>
-                        <div>Reservation</div>
+                        <RoomInfo />
+                        <div className='mb-10 md:col-span-3'>
+                            <RoomReservation />
+                        </div>
                     </div>
                 </div>
             </div>
